@@ -103,12 +103,113 @@ header {
     padding: 20px;
 }
 
+
+/* Universal footer styles */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #1a1a1a; /* Darker background for more contrast */
+    color: #f5f5f5;
+    padding: 40px 20px; /* Increased vertical padding */
+    flex-wrap: wrap;
+    position: absolute; /* Position at bottom */
     bottom: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow at top */
+}
+
+/* Ensure the footer stays at bottom with content above */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    padding-bottom: 300px; /* Adjust based on your footer height */
+}
+
+.footer-section {
+    flex: 1;
+    margin: 15px 25px; /* Increased margins */
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #ff8c00; /* Brighter orange accent */
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-size: 1.25rem; /* Using rem for better scaling */
+    color: #ff8c00;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.footer-section p, 
+.footer-section ul {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #cecece; /* Lighter gray for better readability */
+    margin: 0;
+}
+
+.footer-section a {
+    color: #ff8c00;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    position: relative;
+}
+
+.footer-section a:hover {
+    color: #ffa533;
+    text-decoration: none;
+    padding-left: 5px; /* Slight shift on hover */
+}
+
+.footer-section a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #ffa533;
+    transition: width 0.3s ease;
+}
+
+.footer-section a:hover::after {
+    width: 100%; /* Underline animation on hover */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+    transition: transform 0.2s ease;
+}
+
+.footer-section ul li:hover {
+    transform: translateX(5px); /* Slight movement on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-section {
+        min-width: 100%;
+        margin: 10px 0;
+    }
+    
+    footer {
+        padding: 20px;
+    }
+    
+    body {
+        padding-bottom: 500px; /* Increased padding for mobile */
+    }
 }
