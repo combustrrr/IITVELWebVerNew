@@ -1,0 +1,13 @@
+/* Custom styles for the Experiments page */
+h1 {
+    color: #8e44ad;
+}
+
+.experiments-list {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.experiments-list li {
+    margin-bottom: 10px;
+}

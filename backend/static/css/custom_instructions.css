@@ -1,0 +1,10 @@
+/* Custom styles for the Instructions page */
+h1 {
+    color: #2980b9;
+}
+
+.instructions {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-top: 20px;
+}

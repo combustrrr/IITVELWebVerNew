@@ -1,0 +1,9 @@
+/* Custom styles for the Home page */
+h1 {
+    color: #2c3e50;
+}
+
+.welcome-message {
+    font-size: 1.2em;
+    margin-top: 20px;
+}

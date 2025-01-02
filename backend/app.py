@@ -1,28 +1,24 @@
-from flask import Flask, render_template, jsonify
-from flask_cors import CORS
+from flask import Flask, render_template
+from config import Config
 
 app = Flask(__name__)
-CORS(app)
+app.config.from_object(Config)
 
 @app.route('/')
 def home():
-    return render_template('index.html', title="Home")
+    return render_template('index.html')
 
 @app.route('/experiments')
 def experiments():
-    return render_template('experiments.html', title="Experiments")
+    return render_template('experiments.html')
 
-@app.route('/support')
-def support():
-    return render_template('instructions.html', title="Support")
+@app.route('/instructions')
+def instructions():
+    return render_template('instructions.html')
 
 @app.route('/about')
 def about():
-    return render_template('about.html', title="About Us")
-
-@app.route('/api/data')
-def api_data():
-    return jsonify({"message": "Hello from Flask!"})
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

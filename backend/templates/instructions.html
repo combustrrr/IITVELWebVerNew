@@ -1,6 +1,14 @@
-{% extends 'base.html' %}
-{% block page_css %}<link rel="stylesheet" href="/static/css/support.css">{% endblock %}
+{% extends "base.html" %}
+{% block title %}Instructions{% endblock %}
 {% block content %}
-<h2>Support</h2>
-<p>Instructions and support content goes here.</p>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_instructions.css') }}">
+<h1>Instructions Page</h1>
+<div class="instructions">
+    <p>Follow these steps to use the website:</p>
+    <ol>
+        <li>Step 1: Do this...</li>
+        <li>Step 2: Do that...</li>
+        <li>Step 3: Complete it like this...</li>
+    </ol>
+</div>
 {% endblock %}

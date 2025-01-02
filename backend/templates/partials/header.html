@@ -1,12 +1,10 @@
 <header>
-  <div class="header-container">
-    <img src="/static/images/logo.png" alt="Logo" class="logo">
-    <h1>Website Title</h1>
-  </div>
   <nav>
-    <a href="/">Home</a>
-    <a href="/experiments">Experiments</a>
-    <a href="/support">Support</a>
-    <a href="/about">About Us</a>
+      <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('experiments') }}">Experiments</a></li>
+          <li><a href="{{ url_for('instructions') }}">Instructions</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+      </ul>
   </nav>
 </header>

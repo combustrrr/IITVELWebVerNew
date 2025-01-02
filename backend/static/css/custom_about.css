@@ -1,0 +1,9 @@
+/* Custom styles for the About page */
+h1 {
+    color: #27ae60;
+}
+
+.about-content {
+    font-size: 1.2em;
+    margin-top: 20px;
+}

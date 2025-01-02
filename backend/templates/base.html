@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="/static/css/universal.css">
-    {% block page_css %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/universal.css') }}">
 </head>
 <body>
-{% include 'partials/header.html' %}
-<main>
-    {% block content %}{% endblock %}
-</main>
-{% include 'partials/footer.html' %}
+    {% include 'partials/header.html' %}
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    {% include 'partials/footer.html' %}
 </body>
 </html>

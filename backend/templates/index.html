@@ -1,6 +1,7 @@
-{% extends 'base.html' %}
-{% block page_css %}<link rel="stylesheet" href="/static/css/home.css">{% endblock %}
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
 {% block content %}
-<h2>Welcome to the Home Page</h2>
-<p>This is the main landing page.</p>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_home.css') }}">
+<h1>Welcome to the Home Page</h1>
+<p class="welcome-message">This is the home page of our website.</p>
 {% endblock %}
