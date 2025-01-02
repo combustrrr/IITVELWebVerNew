@@ -2,15 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="A scientific website for experiments and information.">
+    <meta name="keywords" content="experiments, scientific research, support, about us, communication">
+    <meta name="author" content="Your Name">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="https://www.ee.iitb.ac.in/course/~vel/images/logo.jpg">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/universal.css') }}">
+    {% block extra_styles %}{% endblock %}
 </head>
 <body>
     {% include 'partials/header.html' %}
-    <div class="content">
+    <main class="content" role="main">
         {% block content %}{% endblock %}
-    </div>
+    </main>
     {% include 'partials/footer.html' %}
+    {% block extra_scripts %}{% endblock %}
 </body>
 </html>
