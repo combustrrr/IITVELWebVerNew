@@ -1,9 +1,30 @@
 /* Custom styles for the Home page */
-h1 {
-    color: #2c3e50;
+.home-container {
+    padding: 20px;
 }
 
-.welcome-message {
+.greeting-section {
+    margin-bottom: 40px;
+}
+
+.greeting-section h1 {
+    color: #3498db;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.greeting-section p {
     font-size: 1.2em;
-    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.experiments-section h2 {
+    color: #e74c3c;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.experiments-section p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
 }
