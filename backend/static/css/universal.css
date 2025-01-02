@@ -6,29 +6,98 @@ body {
     background-color: #f9f9f9;
 }
 
-header nav ul {
+/* Universal header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-section {
+    display: flex;
+    align-items: center;
+    font-size: 28px;  
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .logo {
+    height: 50px;
+    margin-right: 25px;
+  }
+  
+  /* Right section with institute names */
+  .institute-name {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .institute-name .english-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .institute-name .hindi-name {
+    font-size: 16px;
+    color: #444;
+  }
+  
+  nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around;
-    background-color: #333;
-}
-
-header nav ul li {
+    gap: 5px;
+  }
+  
+  nav ul li {
     display: inline;
-}
-
-header nav ul li a {
-    color: white;
+  }
+  
+  nav ul li a {
+    color: #333;
     text-decoration: none;
-    padding: 14px 20px;
+    padding: 12px 20px;
     display: block;
-}
+    transition: background-color 0.2s;
+  }
+  
+  nav ul li a:hover {
+    background-color: #333;
+    color: white;
+  }
+  
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .left-section {
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 24px;  
+    }
+  
+    nav ul {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
 
-header nav ul li a:hover {
-    background-color: #575757;
-}
 
 .content {
     padding: 20px;
