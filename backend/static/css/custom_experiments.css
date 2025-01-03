@@ -106,23 +106,27 @@ h1 {
 /* Responsive design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2em;
+        font-size: 2.5em;
         margin: 20px 0;
     }
 
     .experiments-container {
-        padding: 10px;
-    }
-
-    .experiments-list > li {
         padding: 15px;
     }
 
+    .experiments-list > li {
+        padding: 18px;
+    }
+
     .chapters-list {
-        padding-left: 15px;
+        padding-left: 20px;
     }
 
     .experiment-list {
-        padding-left: 15px;
+        padding-left: 18px;
+    }
+
+    body {
+        font-size: 1.1em;
     }
 }
