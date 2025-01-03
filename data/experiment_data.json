@@ -1,0 +1,80 @@
+{
+    "PART 1: VECTOR ANALYSIS": {
+        "Chapter 1: Vector Algebra": [
+            {"name": "1.1 Vector addition", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VectorAddition"},
+            {"name": "1.2 Vector products", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VectorProducts"}
+        ],
+        "Chapter 2: Coordinate Systems and Transformation": [
+            {"name": "2.1 Coordinate systems", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/coord"},
+            {"name": "2.2 Position vector and distance vector", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/PositionVectorDistanceVector"}
+        ],
+        "Chapter 3: Vector Calculus": [
+            {"name": "3.1 Curl of a vector field", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/Curl"},
+            {"name": "3.2 Divergence of a vector field", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/Diverge"},
+            {"name": "3.3 Gradient of a scalar field", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/Gradient/index.html"}
+        ]
+    },
+    "PART 2: ELECTROSTATICS": {
+        "Chapter 4: Electrostatic Fields": [
+            {"name": "4.1 Variation of electrostatic fields", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VariationOfElectrostaticField/"},
+            {"name": "4.2 Curl free static electric field", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/CurlFreeField/CurlFreeField/"}
+        ],
+        "Chapter 5: Electric Fields in Material Space": [
+            {"name": "5.1 Variation of electrostatic fields over multiple dielectrics", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VariationOfEFieldOverMultD/"},
+            {"name": "5.2 Electric flux density", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/ElectricFluxdensity/"},
+            {"name": "5.3 Electron moving in different regions", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/ElectronInDifferentRegions/"}
+        ]
+    },
+    "PART 3: MAGNETOSTATICS": {
+        "Chapter 7: Magnetostatic Fields": [
+            {"name": "7.1 Force on a single current carrying conductor", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/FOSC/index.html"},
+            {"name": "7.2 Force between two current carrying conductors", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/FOC/index.html"},
+            {"name": "7.3 Magnetic vector potential", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/MVP/index.html"}
+        ],
+        "Chapter 8: Magnetic Forces, Materials, and Devices": [
+            {"name": "8.1 Hysteresis loss in different materials", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/Hysteresis/"},
+            {"name": "8.2 Operating characteristics of a permanent magnet", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/LoadPM/"}
+        ]
+    },
+    "PART 4: TIME VARYING FIELDS, WAVES, AND APPLICATIONS": {
+        "Chapter 9: Maxwell's Equations": [
+            {"name": "9.1 Variation of time-varying fields", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VTF/index.html"}
+        ],
+        "Chapter 10: Electromagnetic Wave Propagation": [
+            {"name": "10.1 Velocity of EM Waves", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VelocityofEMWaves/"},
+            {"name": "10.2 Visualization of c = ω/β", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VisualizationofVelocityofWave/"},
+            {"name": "10.3 Transverse Nature of Fields", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/TransverseNatureofFields/"},
+            {"name": "10.4 Skin effect in current carrying conductors", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/SkinEffect/"},
+            {"name": "10.5 Variation of Skin Depth as a Function of Frequency for Copper, Mu Metal, and Mild Steel", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VariationofSkinDepth/"},
+            {"name": "10.6 Proximity effect in current carrying conductors", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/ProximityEffect/"},
+            {"name": "10.7 Dispersion phenomenon", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/Dispersion/"},
+            {"name": "10.8 Polarization of waves", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/Polarization/"},
+            {"name": "10.9 Normal Incidence in Medium Interface Air Dielectric", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/NormalIncidanceinMediumInterfaceAirDielectric/"},
+            {"name": "10.10 Variation of Decay Constant", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VariationofDecayConstant/"},
+            {"name": "10.11 Variation of Phase Constant", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VariationofPhaseConstant/"}
+        ],
+        "Chapter 11: Transmission Lines": [
+            {"name": "11.1 Reflection phenomenon in transmission line", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/TransmissionLines/"},
+            {"name": "11.2 Voltage, current, and power associated with a short-circuited line", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VIPwithshort-circuitedline/"},
+            {"name": "11.3 Transmission line as circuit elements", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/TLasCktEl/"}
+        ],
+        "Chapter 12: Waveguides": [
+            {"name": "12.1 Transverse Electric Modes in a Rectangular Waveguide", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/Rec_WG_TE_Modes/"},
+            {"name": "12.2 Transverse Magnetic Modes in a Rectangular Waveguide", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/Rec_WG_TM_Modes/"},
+            {"name": "12.5 TM3 mode of parallel plate waveguide", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/TM3ParallelPlaneWG/"},
+            {"name": "12.6 Surface Current of Rectangular Waveguide (TE10)", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/SurfaceCurrentofRecWG(TE10)/"},
+            {"name": "12.7 Surface Current of Rectangular Waveguide (TE11)", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/SurfaceCurrentofRecWG(TE11)/"},
+            {"name": "12.8 Surface Current of Rectangular Waveguide (TE32)", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/SurfaceCurrentofRecWG(TE32)/"}
+        ],
+        "Chapter 13: Antennas": [
+            {"name": "13.1 Voltage/charge and current distribution for a dipole antenna", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/AntennaCurrentChargeVoltage/"},
+            {"name": "13.2 Wave detachment in a wire antenna: Theory", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/AntennaWaveTheory/"},
+            {"name": "13.3 Wave detachment in a wire antenna: animation", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/AntennaWave/"},
+            {"name": "13.4 Impedance of free space offered to a dipole antenna", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/FreeSpaceImpedance/"},
+            {"name": "13.5 Dipole antenna: Current distribution, E and H Fields in near field region", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/DipoleAntennaCEM/"},
+            {"name": "13.6 Dipole antenna: Basic Concepts and Effect of Variation in Its Length", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/Dipole1/"},
+            {"name": "13.7 Far field characteristic of a half-wavelength dipole antenna", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/FarFieldDipole/"},
+            {"name": "13.8 Microstrip Antenna: Basics and Effect of Variation of Patch Dimensions", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/RMSA/"}
+        ]
+    }
+}
