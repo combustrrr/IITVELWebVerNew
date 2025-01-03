@@ -3,8 +3,27 @@ h1 {
     color: #2980b9;
 }
 
-.instructions {
+.instructions, .communication-portal {
+    margin-top: 20px;
     font-size: 1.1em;
     line-height: 1.6;
-    margin-top: 20px;
+}
+
+.instructions ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+.portal-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.portal-button:hover {
+    background-color: #2980b9;
 }
