@@ -1,132 +1,170 @@
 /* Modern styles for the Experiments page */
 :root {
     --primary-color: #8e44ad;
-    --hover-color: #27ae60;
-    --link-color: #3498db;
+    --secondary-color: #27ae60;
+    --accent-color: #3498db;
     --text-color: #2c3e50;
     --bg-color: #f9f9f9;
-    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Main heading styles */
-h1 {
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  /* Typography */
+  h1, h2, h3 {
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  h1 {
     color: var(--primary-color);
-    font-size: 3em;
+    font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
-    margin: 40px 0;
+    margin: 2rem 0;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Container styling */
-.experiments-container {
-    max-width: 1200px;
+  }
+  
+  /* Container styling */
+  .experiments-container {
+    max-width: 90%;
     margin: 0 auto;
-    padding: 20px;
-    background-color: var(--bg-color);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-
-/* Main experiments list */
-.experiments-list {
+    padding: 1rem;
+  }
+  
+  /* Main experiments list */
+  .experiments-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-.experiments-list > li {
-    margin-bottom: 30px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .experiments-list > li {
+    background: var(--card-bg);
+    border-radius: 12px;
     box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
-}
-
-.experiments-list > li:hover {
+    transition: var(--transition);
+    overflow: hidden;
+  }
+  
+  .experiments-list > li:hover {
     transform: translateY(-5px);
-}
-
-/* Chapters list styling */
-.chapters-list {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Chapters list styling */
+  .chapters-list {
     list-style-type: none;
-    padding-left: 25px;
-    margin-top: 15px;
-    border-left: 3px solid var(--primary-color);
-}
-
-.chapters-list > li {
-    margin-bottom: 20px;
-    padding: 10px;
+    padding: 0;
+    margin: 1rem 0 0 0;
+  }
+  
+  .chapters-list > li {
+    margin-bottom: 1rem;
+    padding: 1rem;
     background: rgba(142, 68, 173, 0.05);
-    border-radius: 6px;
-}
-
-/* Individual experiments list */
-.experiment-list {
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+  }
+  
+  /* Individual experiments list */
+  .experiment-list {
     list-style-type: none;
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.experiment-list > li {
-    margin-bottom: 12px;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+  }
+  
+  .experiment-list > li {
+    margin-bottom: 0.5rem;
     position: relative;
-}
-
-.experiment-list > li::before {
+    padding-left: 1.5rem;
+  }
+  
+  .experiment-list > li::before {
     content: "•";
-    color: var(--primary-color);
+    color: var(--secondary-color);
     position: absolute;
-    left: -15px;
+    left: 0;
     font-size: 1.2em;
-}
-
-/* Link styling */
-.experiments-list a {
+  }
+  
+  /* Link styling */
+  .experiments-list a {
     text-decoration: none;
-    color: var(--link-color);
+    color: var(--accent-color);
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     display: inline-block;
-    padding: 5px 10px;
+    padding: 0.25rem 0.5rem;
     border-radius: 4px;
-}
-
-.experiments-list a:hover {
-    color: var(--hover-color);
-    text-decoration: none;
+  }
+  
+  .experiments-list a:hover {
+    color: var(--secondary-color);
     background-color: rgba(39, 174, 96, 0.1);
     transform: translateX(5px);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5em;
-        margin: 20px 0;
-    }
-
+  }
+  
+  /* Card header */
+  .card-header {
+    background-color: var(--primary-color);
+    color: var(--card-bg);
+    padding: 1rem;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+  }
+  
+  /* Card content */
+  .card-content {
+    padding: 1rem;
+  }
+  
+  /* Responsive design */
+  @media (min-width: 768px) {
     .experiments-container {
-        padding: 15px;
+      padding: 2rem;
     }
-
-    .experiments-list > li {
-        padding: 18px;
+  
+    .experiments-list {
+      gap: 2rem;
     }
-
-    .chapters-list {
-        padding-left: 20px;
+  
+    .chapters-list > li {
+      padding: 1.5rem;
     }
-
-    .experiment-list {
-        padding-left: 18px;
+  }
+  
+  @media (min-width: 1024px) {
+    .experiments-container {
+      max-width: 1200px;
     }
-
+  
     body {
-        font-size: 1.1em;
+      font-size: 1.1rem;
     }
-}
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .experiments-list > li {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .experiments-list > li:nth-child(1) { animation-delay: 0.1s; }
+  .experiments-list > li:nth-child(2) { animation-delay: 0.2s; }
+  .experiments-list > li:nth-child(3) { animation-delay: 0.3s; }
+  .experiments-list > li:nth-child(4) { animation-delay: 0.4s; }
+  .experiments-list > li:nth-child(5) { animation-delay: 0.5s; }
