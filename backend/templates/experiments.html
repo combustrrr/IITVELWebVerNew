@@ -1,11 +1,30 @@
 {% extends "base.html" %}
+
 {% block title %}Experiments{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_experiments.css') }}">
+
 <h1>Experiments Page</h1>
+
+<!-- Display experiments dynamically from the backend -->
 <ul class="experiments-list">
-    <li>Experiment 1</li>
-    <li>Experiment 2</li>
-    <li>Experiment 3</li>
+    {% for part, chapters in experiments.items() %}
+        <li>
+            <h2>{{ part }}</h2>
+            <ul class="chapters-list">
+                {% for chapter, experiments in chapters.items() %}
+                    <li>
+                        <h3>{{ chapter }}</h3>
+                        <ul class="experiment-list">
+                            {% for experiment in experiments %}
+                                <li><a href="{{ experiment['url'] }}">{{ experiment['name'] }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
 </ul>
 {% endblock %}

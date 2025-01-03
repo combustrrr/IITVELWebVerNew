@@ -11,3 +11,12 @@ h1 {
 .experiments-list li {
     margin-bottom: 10px;
 }
+
+.experiments-list a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+.experiments-list a:hover {
+    color: #27ae60;
+}

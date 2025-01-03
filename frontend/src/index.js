@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-// Dynamically load the CSS files served by Flask
+// Function to dynamically load CSS files
 const loadCSS = (url) => {
     const link = document.createElement('link');
     link.href = url;

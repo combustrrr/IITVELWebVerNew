@@ -1,26 +1,43 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Experiments = () => {
-    // Load custom_experiments.css when the Experiments component is mounted
-    useEffect(() => {
-        const link = document.createElement('link');
-        link.href = 'http://localhost:5000/static/css/custom_experiments.css';
-        link.rel = 'stylesheet';
-        document.head.appendChild(link);
+    const [experiments, setExperiments] = useState(null);
 
-        // Cleanup function to remove the CSS link when the component is unmounted
-        return () => {
-            document.head.removeChild(link);
-        };
+    // Fetch the experiments data from the backend
+    useEffect(() => {
+        fetch('/api/experiments')
+            .then((response) => response.json())
+            .then((data) => setExperiments(data))
+            .catch((error) => console.error('Error fetching experiments data:', error));
     }, []);
+
+    if (!experiments) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div>
             <h1>Experiments Page</h1>
             <ul className="experiments-list">
-                <li>Experiment 1</li>
-                <li>Experiment 2</li>
-                <li>Experiment 3</li>
+                {Object.keys(experiments).map((part) => (
+                    <li key={part}>
+                        <h2>{part}</h2>
+                        <ul className="chapters-list">
+                            {Object.keys(experiments[part]).map((chapter) => (
+                                <li key={chapter}>
+                                    <h3>{chapter}</h3>
+                                    <ul className="experiment-list">
+                                        {experiments[part][chapter].map((experiment, index) => (
+                                            <li key={index}>
+                                                <a href={experiment.url}>{experiment.name}</a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
+                            ))}
+                        </ul>
+                    </li>
+                ))}
             </ul>
         </div>
     );
