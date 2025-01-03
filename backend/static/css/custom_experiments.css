@@ -1,22 +1,128 @@
-/* Custom styles for the Experiments page */
+/* Modern styles for the Experiments page */
+:root {
+    --primary-color: #8e44ad;
+    --hover-color: #27ae60;
+    --link-color: #3498db;
+    --text-color: #2c3e50;
+    --bg-color: #f9f9f9;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Main heading styles */
 h1 {
-    color: #8e44ad;
+    color: var(--primary-color);
+    font-size: 3em;
+    text-align: center;
+    margin: 40px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Container styling */
+.experiments-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* Main experiments list */
 .experiments-list {
-    list-style-type: square;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experiments-list > li {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.experiments-list > li:hover {
+    transform: translateY(-5px);
+}
+
+/* Chapters list styling */
+.chapters-list {
+    list-style-type: none;
+    padding-left: 25px;
+    margin-top: 15px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.chapters-list > li {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(142, 68, 173, 0.05);
+    border-radius: 6px;
+}
+
+/* Individual experiments list */
+.experiment-list {
+    list-style-type: none;
     padding-left: 20px;
+    margin-top: 10px;
 }
 
-.experiments-list li {
-    margin-bottom: 10px;
+.experiment-list > li {
+    margin-bottom: 12px;
+    position: relative;
 }
 
+.experiment-list > li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: -15px;
+    font-size: 1.2em;
+}
+
+/* Link styling */
 .experiments-list a {
     text-decoration: none;
-    color: #3498db;
+    color: var(--link-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
 }
 
 .experiments-list a:hover {
-    color: #27ae60;
+    color: var(--hover-color);
+    text-decoration: none;
+    background-color: rgba(39, 174, 96, 0.1);
+    transform: translateX(5px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+        margin: 20px 0;
+    }
+
+    .experiments-container {
+        padding: 10px;
+    }
+
+    .experiments-list > li {
+        padding: 15px;
+    }
+
+    .chapters-list {
+        padding-left: 15px;
+    }
+
+    .experiment-list {
+        padding-left: 15px;
+    }
 }

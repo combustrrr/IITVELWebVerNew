@@ -17,7 +17,7 @@ const Experiments = () => {
 
     return (
         <div>
-            <h1>Experiments Page</h1>
+            <h1>List of Experiments</h1>
             <ul className="experiments-list">
                 {Object.keys(experiments).map((part) => (
                     <li key={part}>
