@@ -32,7 +32,7 @@ body {
     padding: 0;
 }
 
-/* Container layout */
+/* Container layout - now more expansive */
 .about-container {
     width: 90%;
     max-width: 1400px;
@@ -69,17 +69,17 @@ body {
     transform: translateX(10px);
 }
 
-/* Shared style for Instructor and Contributors */
+/* Credits section */
 .credits {
-    display: grid;
-    gap: calc(var(--spacing-unit) * 2);
     font-size: 1.2rem;
     line-height: 1.8;
     margin: calc(var(--spacing-unit) * 3) 0;
     color: var(--text-color);
+    display: grid;
+    gap: calc(var(--spacing-unit) * 2);
 }
 
-.credits-item {
+.credits p {
     margin: 0;
     max-width: 75ch;
     padding: var(--spacing-unit);
@@ -89,21 +89,22 @@ body {
 }
 
 /* Link styling */
-.credits-item a {
+.credits a {
     color: var(--secondary-color);
     text-decoration: none;
-    font-weight: 500;
     position: relative;
+    padding: 0 4px;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
-.credits-item a:hover {
+.credits a:hover {
     color: var(--primary-color);
     background-color: rgba(39, 174, 96, 0.1);
     border-radius: 4px;
 }
 
-.credits-item a::after {
+.credits a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -116,7 +117,7 @@ body {
     transform-origin: left;
 }
 
-.credits-item a:hover::after {
+.credits a:hover::after {
     transform: scaleX(1);
 }
 
@@ -135,12 +136,12 @@ body {
         padding: var(--spacing-unit);
         border-radius: 0;
     }
-
+    
     .about-section {
         margin: calc(var(--spacing-unit) * 2) 0;
         padding: var(--spacing-unit);
     }
-
+    
     .credits {
         font-size: 1.1rem;
         gap: var(--spacing-unit);
@@ -155,7 +156,7 @@ body {
         margin: 0;
         padding: 2cm;
     }
-
+    
     .about-section {
         break-inside: avoid;
     }
