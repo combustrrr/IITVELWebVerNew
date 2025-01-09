@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Footer() {
+    const [visitorCount, setVisitorCount] = useState(0);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/api/visitor_count')
+            .then(response => response.json())
+            .then(data => setVisitorCount(data.count));
+    }, []);
+
     return (
         <footer>
             <div className="footer-section left">
@@ -27,6 +35,10 @@ function Footer() {
                     <li><a href="https://www.ee.iitb.ac.in/~idlab/">Insulation Diagnostics Laboratory</a></li>
                     <li><a href="https://www.ee.iitb.ac.in/web">Electrical Department</a></li>
                 </ul>
+            </div>
+
+            <div className="visitor-count">
+                <p>Live Visitors Count: {visitorCount}</p>
             </div>
         </footer>
     );
