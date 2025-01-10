@@ -7,7 +7,8 @@
     "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "start:backend": "cd backend && flask run",
     "start:frontend": "cd frontend && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm install --production"
   },
   "private": true,
   "devDependencies": {
