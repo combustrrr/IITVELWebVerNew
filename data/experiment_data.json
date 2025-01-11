@@ -23,11 +23,10 @@
             {"name": "5.1 Variation of electrostatic fields over multiple dielectrics", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VariationOfEFieldOverMultD/"},
             {"name": "5.2 Electric flux density", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/ElectricFluxdensity/"},
             {"name": "5.3 Electron moving in different regions", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/ElectronInDifferentRegions/"}
-        ]
-        "Chapter 6: Electrostatic Boundary Value": [
-            {"name": "5.1 Variation of electrostatic fields over multiple dielectrics", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/VariationOfEFieldOverMultD/"},
-            {"name": "5.2 Electric flux density", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/ElectricFluxdensity/"},
-            {"name": "5.3 Electron moving in different regions", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/ElectronInDifferentRegions/"}
+        ],
+        "Chapter 6: Electrostatic Boundary-Value Problems": [
+            {"name": "6.1 Capacitive grading in condenser bushings", "url": "https://www.ee.iitb.ac.in/course/~vel/apps/Bushings/index.html"},
+        
         ]
     },
     "PART 3: MAGNETOSTATICS": {
