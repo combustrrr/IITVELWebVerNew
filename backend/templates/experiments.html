@@ -5,26 +5,48 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_experiments.css') }}">
 
-<h1>List of Experiments</h1>
+<div style="display: flex;">
+    <div class="sidebar">
+        <h1>Parts</h1>
+        <ul class="experiments-list">
+            {% for part, chapters in experiments.items() %}
+                <li onclick="showPart('{{ part }}')" class="{{ 'active' if loop.first else '' }}">
+                    <h2>{{ part }}</h2>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="main-content">
+        {% for part, chapters in experiments.items() %}
+            <div id="{{ part }}" class="part-content" style="display: {{ 'block' if loop.first else 'none' }};">
+                <h1>{{ part }}</h1>
+                <ul class="chapters-list">
+                    {% for chapter, experiments in chapters.items() %}
+                        <li>
+                            <h3>{{ chapter }}</h3>
+                            <ul class="experiment-list">
+                                {% for experiment in experiments %}
+                                    <li><a href="{{ experiment['url'] }}">{{ experiment['name'] }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 
-<!-- Display experiments dynamically from the backend -->
-<ul class="experiments-list">
-    {% for part, chapters in experiments.items() %}
-        <li>
-            <h2>{{ part }}</h2>
-            <ul class="chapters-list">
-                {% for chapter, experiments in chapters.items() %}
-                    <li>
-                        <h3>{{ chapter }}</h3>
-                        <ul class="experiment-list">
-                            {% for experiment in experiments %}
-                                <li><a href="{{ experiment['url'] }}">{{ experiment['name'] }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                {% endfor %}
-            </ul>
-        </li>
-    {% endfor %}
-</ul>
+<script>
+    function showPart(part) {
+        document.querySelectorAll('.part-content').forEach(element => {
+            element.style.display = 'none';
+        });
+        document.getElementById(part).style.display = 'block';
+        document.querySelectorAll('.sidebar li').forEach(element => {
+            element.classList.remove('active');
+        });
+        document.querySelector(`.sidebar li[onclick="showPart('${part}')"]`).classList.add('active');
+    }
+</script>
 {% endblock %}
