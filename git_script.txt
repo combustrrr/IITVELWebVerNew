@@ -1,0 +1,43 @@
+# 1. Save any changes in your working directory before resetting (if necessary)
+# This ensures you don't lose uncommitted work if you want to return to it later.
+git stash save "Backup before resetting"
+
+# 2. Ensure you are on the correct branch (you can change this to the branch you're working on)
+git checkout master
+
+# 3. Pull the latest changes from the remote (to get the penultimate version)
+git pull origin master
+
+# 4. If there are any issues with the pull (merge conflicts, etc.), reset the local branch to the last successful state
+git reset --hard HEAD~1
+
+# 5. Switch to the improvement-branch and get the latest code
+git checkout improvement-branch
+
+# 6. Pull the latest changes from the improvement-branch to make sure it's up-to-date
+git pull origin improvement-branch
+
+# 7. Checkout the master branch and merge the improvement-branch into it
+git checkout master
+git merge improvement-branch --no-ff -m "Merged changes from improvement-branch"
+
+# 8. Resolve any merge conflicts (if any), then continue
+# In case there are conflicts, you'll need to manually resolve them.
+# After resolving, add the resolved files and complete the merge
+git add .
+git commit -m "Resolved merge conflicts"
+
+# 9. Push the changes to the master branch
+git push origin master
+
+# 10. Checkout the stable-backup branch
+git checkout stable-backup
+
+# 11. Merge the master branch into stable-backup
+git merge master --no-ff -m "Merged latest master into stable-backup"
+
+# 12. Push the changes to the stable-backup branch
+git push origin stable-backup
+
+# 13. Clean up any stashes if you no longer need them
+git stash drop
