@@ -32,9 +32,9 @@ const About = () => {
             <section className="about-section">
                 <h2>Contributors</h2>
                 <div className="credits">
+                    <p><strong>B. Sai Ram</strong><br />Research Scholar<br />Department of Electrical Engineering<br />IIT Bombay<br />Mumbai, Maharashtra, INDIA<br /><a href="https://sites.google.com/iitdh.ac.in/sairamboggavarapu/bio" target="_blank" rel="noopener noreferrer">Instructor's Profile</a></p>
                     <p><strong>Aditi Kamat</strong><br />B.Tech<br />Department of Electrical Engineering<br />IIT Bombay<br />Mumbai, Maharashtra, INDIA</p>
                     <p><strong>M. A. Pawar</strong><br />B.Tech<br />Department of Electrical Engineering<br />IIT Bombay<br />Mumbai, Maharashtra, INDIA</p>
-                    <p><strong>B. Sai Ram</strong><br />Research Scholar<br />Department of Electrical Engineering<br />IIT Bombay<br />Mumbai, Maharashtra, INDIA</p>
                     <p><strong>Priyanshi Shrivastava</strong><br />Summer Intern<br />Department of Electrical Engineering<br />IIT Bombay<br />Mumbai, Maharashtra, INDIA</p>
                 </div>
             </section>
