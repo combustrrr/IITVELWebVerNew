@@ -1,170 +1,204 @@
-/* Modern styles for the Experiments page */
+/* Root Variables */
 :root {
-    --primary-color: #8e44ad;
-    --secondary-color: #27ae60;
-    --accent-color: #3498db;
-    --text-color: #2c3e50;
-    --bg-color: #f9f9f9;
-    --card-bg: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
+  --primary-color: #005c99; /* IITB-like blue */
+  --secondary-color: #2c3e50; /* Dark gray for text */
+  --accent-color: #3498db; /* Accent blue */
+  --hover-bg: rgba(52, 152, 219, 0.1); /* Hover background color */
+  --bg-color: #f4f4f9; /* Background color */
+  --sidebar-bg: #ffffff; /* Sidebar background color */
+  --text-color: #2c3e50;
+  --border-color: rgba(0, 0, 0, 0.1); /* Subtle border */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 300px;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar .active {
+  background-color: var(--hover-bg);
+  border-left-color: var(--primary-color);
+}
+
+.sidebar h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Parts, Chapters, and Experiments */
+.part,
+.chapter {
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--sidebar-bg);
+  border-left: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+  position: relative;
+}
+
+.part:hover,
+.chapter:hover {
+  background-color: var(--hover-bg);
+}
+
+.part.active,
+.chapter.active {
+  border-left-color: var(--primary-color);
+  padding-left: 1.5rem;
+}
+
+.part::before,
+.chapter::before {
+  content: "▶";
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  left: 0;
+}
+
+.part.active::before,
+.chapter.active::before {
+  transform: rotate(90deg);
+}
+
+.experiment-list {
+  list-style-type: none;
+  padding-left: 2rem;
+  margin: 0;
+  border-left: 1px solid var(--border-color);
+}
+
+.experiment-list li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.experiment-list a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.experiment-list a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.experiment-list li::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.experiment-list li:hover::before {
+  transform: rotate(90deg);
+}
+
+/* Smooth Collapsibility for Parts and Chapters */
+.part ul,
+.chapter ul {
+  display: none;
+  padding-left: 1rem;
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+  border-left: 1px solid var(--border-color);
+}
+
+.part.active ul,
+.chapter.active ul {
+  display: block;
+}
+
+/* Hover Effects and Transitions */
+.part:hover, .chapter:hover {
+  background-color: var(--hover-bg);
+  padding-left: 1.5rem;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--bg-color);
+  overflow-y: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      border-right: none;
   }
-  
-  /* Typography */
-  h1, h2, h3 {
-    margin: 0;
-    line-height: 1.2;
+
+  .main-content {
+      margin-left: 0;
+      padding: 1rem;
   }
-  
-  h1 {
-    color: var(--primary-color);
-    font-size: clamp(2rem, 5vw, 3rem);
-    text-align: center;
-    margin: 2rem 0;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+  .part,
+  .chapter {
+      font-size: 1.2rem;
+      padding: 0.8rem;
   }
-  
-  /* Container styling */
-  .experiments-container {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  /* Main experiments list */
-  .experiments-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  
-  .experiments-list > li {
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    overflow: hidden;
-  }
-  
-  .experiments-list > li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Chapters list styling */
-  .chapters-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 1rem 0 0 0;
-  }
-  
-  .chapters-list > li {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: rgba(142, 68, 173, 0.05);
-    border-radius: 8px;
-    border-left: 3px solid var(--primary-color);
-  }
-  
-  /* Individual experiments list */
-  .experiment-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0.5rem 0 0 0;
-  }
-  
-  .experiment-list > li {
-    margin-bottom: 0.5rem;
-    position: relative;
-    padding-left: 1.5rem;
-  }
-  
-  .experiment-list > li::before {
-    content: "•";
-    color: var(--secondary-color);
-    position: absolute;
-    left: 0;
-    font-size: 1.2em;
-  }
-  
-  /* Link styling */
-  .experiments-list a {
-    text-decoration: none;
-    color: var(--accent-color);
-    font-weight: 600;
-    transition: var(--transition);
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-  }
-  
-  .experiments-list a:hover {
-    color: var(--secondary-color);
-    background-color: rgba(39, 174, 96, 0.1);
-    transform: translateX(5px);
-  }
-  
-  /* Card header */
-  .card-header {
-    background-color: var(--primary-color);
-    color: var(--card-bg);
-    padding: 1rem;
-  }
-  
-  .card-header h2 {
-    margin: 0;
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-  }
-  
-  /* Card content */
-  .card-content {
-    padding: 1rem;
-  }
-  
-  /* Responsive design */
-  @media (min-width: 768px) {
-    .experiments-container {
-      padding: 2rem;
-    }
-  
-    .experiments-list {
-      gap: 2rem;
-    }
-  
-    .chapters-list > li {
-      padding: 1.5rem;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .experiments-container {
-      max-width: 1200px;
-    }
-  
-    body {
-      font-size: 1.1rem;
-    }
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  .experiments-list > li {
-    animation: fadeIn 0.5s ease-out forwards;
-    opacity: 0;
-  }
-  
-  .experiments-list > li:nth-child(1) { animation-delay: 0.1s; }
-  .experiments-list > li:nth-child(2) { animation-delay: 0.2s; }
-  .experiments-list > li:nth-child(3) { animation-delay: 0.3s; }
-  .experiments-list > li:nth-child(4) { animation-delay: 0.4s; }
-  .experiments-list > li:nth-child(5) { animation-delay: 0.5s; }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.experiment-list li {
+  animation: fadeIn 0.5s ease-out forwards;
+}

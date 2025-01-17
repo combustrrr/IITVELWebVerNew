@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const Experiments = () => {
     const [experiments, setExperiments] = useState(null);
+    const [selectedPart, setSelectedPart] = useState(null);
 
     // Fetch the experiments data from the backend
     useEffect(() => {
@@ -16,18 +17,27 @@ const Experiments = () => {
     }
 
     return (
-        <div>
-            <h1>List of Experiments</h1>
-            <ul className="experiments-list">
-                {Object.keys(experiments).map((part) => (
-                    <li key={part}>
-                        <h2>{part}</h2>
+        <div style={{ display: 'flex' }}>
+            <div className="sidebar">
+                <h1>Parts</h1>
+                <ul className="experiments-list">
+                    {Object.keys(experiments).map((part) => (
+                        <li key={part} onClick={() => setSelectedPart(part)} className={selectedPart === part ? 'active' : ''}>
+                            <h2>{part}</h2>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div className="main-content">
+                {selectedPart && (
+                    <>
+                        <h1>{selectedPart}</h1>
                         <ul className="chapters-list">
-                            {Object.keys(experiments[part]).map((chapter) => (
+                            {Object.keys(experiments[selectedPart]).map((chapter) => (
                                 <li key={chapter}>
                                     <h3>{chapter}</h3>
                                     <ul className="experiment-list">
-                                        {experiments[part][chapter].map((experiment, index) => (
+                                        {experiments[selectedPart][chapter].map((experiment, index) => (
                                             <li key={index}>
                                                 <a href={experiment.url}>{experiment.name}</a>
                                             </li>
@@ -36,9 +46,9 @@ const Experiments = () => {
                                 </li>
                             ))}
                         </ul>
-                    </li>
-                ))}
-            </ul>
+                    </>
+                )}
+            </div>
         </div>
     );
 };

@@ -34,6 +34,11 @@
             <img id="slide" src="https://www.ee.iitb.ac.in/course/~vel/images/slide1.png" alt="Gallery Image 1" />
         </div>
     </section>
+
+    <section class="visitor-count-section">
+        <h2>Visitor Count</h2>
+        <p id="visitor-count">Loading...</p>
+    </section>
 </div>
 
 <script>
@@ -50,5 +55,18 @@
     }
 
     setInterval(changeImage, 7000); // Change image every 7 seconds
+
+    async function fetchVisitCounter() {
+        try {
+            const response = await fetch('/api/visit_counter');
+            const data = await response.json();
+            document.getElementById('visitor-count').textContent = data.visit_counter;
+        } catch (error) {
+            console.error('Error fetching visit counter:', error);
+        }
+    }
+
+    fetchVisitCounter();
+    setInterval(fetchVisitCounter, 10000); // Fetch every 10 seconds
 </script>
 {% endblock %}

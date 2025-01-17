@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Home = () => {
     const [currentImage, setCurrentImage] = useState(0);
@@ -7,6 +8,8 @@ const Home = () => {
         'https://www.ee.iitb.ac.in/course/~vel/images/slide2.png',
         'https://www.ee.iitb.ac.in/course/~vel/images/slide3.png'
     ];
+
+    const [visitCounter, setVisitCounter] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -26,6 +29,22 @@ const Home = () => {
         return () => {
             document.head.removeChild(link);
         };
+    }, []);
+
+    useEffect(() => {
+        const fetchVisitCounter = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/api/visit_counter');
+                setVisitCounter(response.data.visit_counter);
+            } catch (error) {
+                console.error('Error fetching visit counter:', error);
+            }
+        };
+
+        fetchVisitCounter();
+        const interval = setInterval(fetchVisitCounter, 10000); // Fetch every 10 seconds
+
+        return () => clearInterval(interval);
     }, []);
 
     return (
@@ -51,6 +70,11 @@ const Home = () => {
                 <div className="slideshow">
                     <img src={images[currentImage]} alt={`Gallery Image ${currentImage + 1}`} />
                 </div>
+            </section>
+
+            <section className="visitor-count-section">
+                <h2>Visitor Count</h2>
+                <p>{visitCounter}</p>
             </section>
         </div>
     );
